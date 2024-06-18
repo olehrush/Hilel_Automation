@@ -29,6 +29,3 @@ namespace PlaywrigthUITests
         }
     }
 }
-
-
-// Test branch lesson creation for homework

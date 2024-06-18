@@ -1,10 +1,14 @@
 ﻿using Microsoft.Playwright;
-
+using NUnitTests.Features.Drive;
 namespace PlaywrigthUITests.Tests
 {
     [Description("Verify Buttons on buttons page")]
     class ButtonsTestsrun : UITestFixture
     {
+
+        public byte newstring = DrivePresetup.Accelerate;
+        public byte newstring1 = DrivePresetup.InternalClass.InternalAccelerate;
+
         [Test, Description("Verify Click Me button"), Retry(2)]
         public async Task ClickButtonTest()
         {
@@ -24,7 +28,7 @@ namespace PlaywrigthUITests.Tests
             Assert.That(isNotVisible, "The element with text 'You have done a double click' should NOT be visible after clicking the button.");
         }
 
-        [Test, Description("Verify Double Click Me button"), Retry(2)]
+        [Test, Description("Verify Double Click Me button"), Retry(3)]
         public async Task DoubleClickButtonTest()
         {
             // Given I go to DemoQA Elements page 
@@ -64,5 +68,13 @@ namespace PlaywrigthUITests.Tests
             var isNotVisible = await Page.GetByText("You have done a double click").IsHiddenAsync();
             Assert.That(isNotVisible, "The element with text 'You have done a dynamic click' should NOT be visible after Rigth clicking the button.");
         }
+
+        //Homework Lesson_9
+        //TODO : 
+        //TC-4 : Verify Click Me button should be enabled
+        //TC-5 : Verify Click Rigth Click Me button verify button focused
+        //TC-6 : Verify H1 Buttons is visible
+        //TC-7 : Verify text 'You have done a dynamic click' is not visible after page refresh
+
     }
 }
